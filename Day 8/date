@@ -1,0 +1,81 @@
+echo "Default date: "
+date
+
+echo "Date (day only):"
+date +"%d"
+
+echo "Month only"
+date +"%m"
+
+echo "date & Month & Year"
+date +"%d%m%y"
+
+echo "short weekday format:"
+date +"%a %d%m%y"
+
+echo "full format:"
+date +"%A %B %d %y"
+
+date +"%d-%m"
+date +"%d/%m"
+
+# [2021asp32@fedora ~]$ vi ex1.sh
+# [2021asp32@fedora ~]$ chmod 722 ex1.sh
+# [2021asp32@fedora ~]$ ./ex1.sh
+# Default date:
+# Mon Oct 13 10:52:08 AM +0530 2025
+# Date (day only):
+# 13
+# Month only
+# 10
+# date & Month & Year
+# 131025
+# short weekday format:
+# Mon 131025
+# full format:
+# Monday October 13 25
+# 13-10
+# 13/10
+
+
+echo "Enter your birth date (DD-MM-YYYY): "
+read birth_date
+
+today=$(date +%d-%m)
+
+birth_date1=$(expr substr "$birth_date" 1 5)
+
+if [ "$birth_date1" == "$today" ]; 
+then
+    echo "Happy Birthday!"
+else
+    echo "Today is not your birthday."
+fi
+
+
+# [2021asp32@fedora ~]$ vi ex2.sh
+# [2021asp32@fedora ~]$ chmod 722 ex2.sh
+# [2021asp32@fedora ~]$ ./ex2.sh
+# Enter your birth date (DD/MM):
+# 07/08
+# Today is not your birthday.
+# [2021asp32@fedora ~]$ ./ex2.sh
+# Enter your birth date (DD/MM):
+# 13/10
+# Happy Birthday!
+
+echo "Enter your birth date (DD-MM-YYYY): "
+read birth_date
+
+d1=`expr substr "$birth_date" 1 2`
+d1=`expr substr "$birth_date" 4 2`
+
+m=$(date +"%d")
+n=$(date +"%m")
+
+if [ $m -eq $d1 ] && [ $n -eq $d2 ]
+then
+    echo "Happy Birthday!"
+else
+    echo "Today is not your birthday."
+fi

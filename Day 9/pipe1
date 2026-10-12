@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<unistd.h>
+int main(){
+	int p[2],rv;
+	rv=pipe(p);
+	
+	if(rv<0)
+		printf("Pipe is not created\n");
+	else
+		printf("Pipe is created\n");
+	
+	return 0;
+}

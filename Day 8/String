@@ -1,0 +1,17 @@
+read -p "Enter your name: " name
+echo $name
+
+read -p "Enter your first name and last name: " fname lname
+echo "First Name: $fname"
+echo "Last Name: $lname"
+
+# [2021asp32@fedora ~]$ vi ex4.sh
+# [2021asp32@fedora ~]$ chmod 722 ex4.sh
+# [2021asp32@fedora ~]$ ./ex4.sh
+# Enter your name: Mithursan
+# Mithursan
+# Enter your first name and last name: Peranantham Mithursan
+# First Name: Peranantham
+# Last Name: Mithursan
+
+

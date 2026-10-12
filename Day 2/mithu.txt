@@ -1,0 +1,260 @@
+login as: 2021asp32
+2021asp32@172.16.150.200's password:
+Access denied
+2021asp32@172.16.150.200's password:
+Last failed login: Mon Sep  1 10:26:15 +0530 2025 from 172.16.150.23 on ssh:nott                                                                                                                     y
+There was 1 failed login attempt since the last successful login.
+Last login: Mon Aug 18 10:35:40 2025 from 172.16.150.9
+[2021asp32@fedora ~]$ ls
+A  M
+[2021asp32@fedora ~]$ ls-a
+bash: ls-a: command not found...
+[2021asp32@fedora ~]$ ls
+A  M
+[2021asp32@fedora ~]$ mkdir 2025
+[2021asp32@fedora ~]$ cd 2025
+[2021asp32@fedora 2025]$ touch first.text
+[2021asp32@fedora 2025]$ vi first.txt
+[2021asp32@fedora 2025]$ vi first.txt
+[2021asp32@fedora 2025]$ wc -1 first.txt
+wc: invalid option -- '1'
+Try 'wc --help' for more information.
+[2021asp32@fedora 2025]$ wc -l first.txt
+5 first.txt
+[2021asp32@fedora 2025]$ head -n 3 first.txt
+
+i
+Hello,
+[2021asp32@fedora 2025]$ touch first1.txt
+[2021asp32@fedora 2025]$ vi first1.txt
+[2021asp32@fedora 2025]$ wc -l first.txt
+5 first.txt
+[2021asp32@fedora 2025]$ wc -l first1.txt
+4 first1.txt
+[2021asp32@fedora 2025]$ head -n 2 first1.txt
+hello
+hai!!!
+[2021asp32@fedora 2025]$ tail -n 3 first1.txt
+hai!!!
+how are you?
+I am fine
+[2021asp32@fedora 2025]$ cp first.txt second.txt
+[2021asp32@fedora 2025]$ vi second.txt
+[2021asp32@fedora 2025]$ mv first.txt third.txt
+[2021asp32@fedora 2025]$ ls
+first1.txt  first.text  second.txt  third.txt
+[2021asp32@fedora 2025]$ rm first1.txt
+[2021asp32@fedora 2025]$ ls
+first.text  second.txt  third.txt
+[2021asp32@fedora 2025]$ rm 2025
+rm: cannot remove '2025': No such file or directory
+[2021asp32@fedora 2025]$ rm first.txt
+rm: cannot remove 'first.txt': No such file or directory
+[2021asp32@fedora 2025]$ ls
+first.text  second.txt  third.txt
+[2021asp32@fedora 2025]$ rm third.txt
+[2021asp32@fedora 2025]$ ls
+first.text  second.txt
+[2021asp32@fedora 2025]$ rm first.txt
+rm: cannot remove 'first.txt': No such file or directory
+[2021asp32@fedora 2025]$ mkdir 2025_OS
+[2021asp32@fedora 2025]$ cd 2025_OS
+[2021asp32@fedora 2025_OS]$ touch first.txt
+[2021asp32@fedora 2025_OS]$ vi first.txt
+[2021asp32@fedora 2025_OS]$ wc -l first.txt
+4 first.txt
+[2021asp32@fedora 2025_OS]$ head -n 2 first.txt
+hello
+hai!!!
+[2021asp32@fedora 2025_OS]$ tail -n 3 first.txt
+hai!!!
+How are you
+I am fine
+[2021asp32@fedora 2025_OS]$ cp first.txt second.txt
+[2021asp32@fedora 2025_OS]$ vi second.txt
+[2021asp32@fedora 2025_OS]$ mv first.txt third.txt
+[2021asp32@fedora 2025_OS]$ ls
+second.txt  third.txt
+[2021asp32@fedora 2025_OS]$ rm third.txt
+[2021asp32@fedora 2025_OS]$ ls
+second.txt
+[2021asp32@fedora 2025_OS]$ cat second.txt
+hello
+hai!!!
+How are you
+I am fine
+[2021asp32@fedora 2025_OS]$ grep "hello" second.txt
+hello
+[2021asp32@fedora 2025_OS]$ vi second.txt
+[2021asp32@fedora 2025_OS]$ mkdir D
+[2021asp32@fedora 2025_OS]$ rmdir D
+[2021asp32@fedora 2025_OS]$ ls
+second.txt
+[2021asp32@fedora 2025_OS]$ rmdir D
+rmdir: failed to remove 'D': No such file or directory
+[2021asp32@fedora 2025_OS]$ mkdir D
+[2021asp32@fedora 2025_OS]$ ls
+D  second.txt
+[2021asp32@fedora 2025_OS]$ rmdir D
+[2021asp32@fedora 2025_OS]$ ls
+second.txt
+[2021asp32@fedora 2025_OS]$ whoami
+2021asp32
+[2021asp32@fedora 2025_OS]$ uname -a
+Linux fedora 5.14.10-300.fc35.x86_64 #1 SMP Thu Oct 7 20:48:44 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+[2021asp32@fedora 2025_OS]$ date
+Mon Sep  1 11:01:18 AM +0530 2025
+[2021asp32@fedora 2025_OS]$ uptime
+ 11:02:05 up  1:53, 52 users,  load average: 0.42, 0.23, 0.20
+[2021asp32@fedora 2025_OS]$ ps
+    PID TTY          TIME CMD
+   2813 pts/6    00:00:00 bash
+   9996 pts/6    00:00:00 ps
+[2021asp32@fedora 2025_OS]$ top
+top - 11:02:52 up  1:54, 52 users,  load average: 0.18, 0.20, 0.19
+Tasks: 537 total,   1 running, 535 sleeping,   1 stopped,   0 zombie
+%Cpu(s):  0.3 us,  0.6 sy,  0.0 ni, 99.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   3763.7 total,    109.0 free,   1886.4 used,   1768.3 buff/cache
+MiB Swap:   3763.0 total,   3738.7 free,     24.2 used.   1482.1 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    716 systemd+  20   0   17408   7728   6896 S   1.0   0.2   0:21.96 systemd-oomd
+   9721 2021asp+  20   0  226552   4404   3312 S   1.0   0.1   0:07.97 top
+   9845 2021asp+  20   0  226480   4552   3304 S   1.0   0.1   0:00.64 top
+   9997 2021asp+  20   0  226528   4396   3304 S   1.0   0.1   0:00.24 top
+  10004 2021asp+  20   0  226480   4692   3444 R   1.0   0.1   0:00.22 top
+   9765 2020asp+  20   0  226476   4468   3220 S   0.7   0.1   0:00.84 top
+   9801 2021asp+  20   0  226484   4688   3444 S   0.7   0.1   0:00.76 top
+   9901 2021asp+  20   0  226492   4556   3292 S   0.7   0.1   0:00.56 top
+   9988 2021asp+  20   0  226476   4612   3368 S   0.7   0.1   0:00.26 top
+      1 root      20   0  178156  19272  10844 S   0.0   0.5   0:05.20 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd
+      3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq
+      9 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_kthre
+     10 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_rude_
+     11 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_tasks_trace
+     12 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/0
+     13 root      20   0       0      0      0 I   0.0   0.0   0:02.06 rcu_sched
+     14 root      rt   0       0      0      0 S   0.0   0.0   0:00.00 migration/0
+     16 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     17 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
+     18 root      rt   0       0      0      0 S   0.0   0.0   0:00.10 migration/1
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/1
+     21 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-events_highpri
+     22 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/2
+     23 root      rt   0       0      0      0 S   0.0   0.0   0:00.10 migration/2
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/2
+     26 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0H-events_highpri
+     27 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/3
+     28 root      rt   0       0      0      0 S   0.0   0.0   0:00.10 migration/3
+     29 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/3
+     31 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0H-events_highpri
+     32 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/4
+     33 root      rt   0       0      0      0 S   0.0   0.0   0:00.10 migration/4
+     34 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/4
+     36 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/4:0H-events_highpri
+     37 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/5
+     38 root      rt   0       0      0      0 S   0.0   0.0   0:00.11 migration/5
+     39 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/5
+     41 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/5:0H-kblockd
+     42 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/6
+     43 root      rt   0       0      0      0 S   0.0   0.0   0:00.11 migration/6
+[2021asp32@fedora 2025_OS]$ touch firstc.c
+[2021asp32@fedora 2025_OS]$ vi firstc.c
+[2021asp32@fedora 2025_OS]$ gcc firstc.c -o fexe
+[2021asp32@fedora 2025_OS]$ ./fexe
+Hello everyone!!
+You are following CSC 3123.
+[2021asp32@fedora 2025_OS]$ touch ex2.c
+[2021asp32@fedora 2025_OS]$ vi ex2.c
+[2021asp32@fedora 2025_OS]$ gcc ex2.c -o f2exe
+[2021asp32@fedora 2025_OS]$ ./fexegcc
+Hello everyone!!
+You are following CSC 3123.
+[2021asp32@fedora 2025_OS]$ ./f2exe
+Enter an integer: 7
+Entered integer is: &d
+[2021asp32@fedora 2025_OS]$ vi ex2.c
+[2021asp32@fedora 2025_OS]$ ./f2exe
+Enter an integer: 7
+Entered integer is: &d
+[2021asp32@fedora 2025_OS]$ vi ex2.c
+[2021asp32@fedora 2025_OS]$ gcc ex2.c -o f2exe
+[2021asp32@fedora 2025_OS]$ ./f2exe
+Enter an integer: 7
+Entered integer is: 7
+[2021asp32@fedora 2025_OS]$ touch ex3.c
+[2021asp32@fedora 2025_OS]$ vi ex3.c
+[2021asp32@fedora 2025_OS]$ vi ex3.c
+[2021asp32@fedora 2025_OS]$ gcc ex3.c -o f3exe
+ex3.c: In function ‘main’:
+ex3.c:5:18: error: expected expression before ‘)’ token
+    5 |         if(num >=))
+      |                  ^
+ex3.c:9:9: error: ‘else’ without a previous ‘if’
+    9 |         else
+      |         ^~~~
+[2021asp32@fedora 2025_OS]$ vi ex3.c
+[2021asp32@fedora 2025_OS]$ gcc ex3.c -o f3exe
+ex3.c: In function ‘main’:
+ex3.c:5:18: error: expected expression before ‘)’ token
+    5 |         if(num >=)
+      |                  ^
+[2021asp32@fedora 2025_OS]$ vi ex3.c
+[2021asp32@fedora 2025_OS]$ gcc ex3.c -o f3exe
+[2021asp32@fedora 2025_OS]$ ./f3exe
+The given number is positive[2021asp32@fedora 2025_OS]$ ./f3exe
+The given number is positive[2021asp32@fedora 2025_OS]$ vi ex3.c
+[2021asp32@fedora 2025_OS]$ touch ex4.c
+[2021asp32@fedora 2025_OS]$ vi ex4.c
+[2021asp32@fedora 2025_OS]$ gcc ex4.c -o f4exe
+[2021asp32@fedora 2025_OS]$ ./f4exe
+Enter the two integers: 4
+This given number is even.[2021asp32@fedora 2025_OS]$ touch ex5.c
+[2021asp32@fedora 2025_OS]$ vi ex5.c
+[2021asp32@fedora 2025_OS]$ gcc ex5.c -o f5exe
+[2021asp32@fedora 2025_OS]$ ./f5exe
+Enter the two integers: 12345678910[2021asp32@fedora 2025_OS]$ vi ex5.c
+[2021asp32@fedora 2025_OS]$ gcc ex5.c -o f5exe
+[2021asp32@fedora 2025_OS]$ ./f5exe
+12345678910[2021asp32@fedora 2025_OS]$ vi ex5.c
+[2021asp32@fedora 2025_OS]$ gcc ex5.c -o f5exe
+[2021asp32@fedora 2025_OS]$ ./f5exe
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+[2021asp32@fedora 2025_OS]$ touch ex6.c
+[2021asp32@fedora 2025_OS]$ vi ex6.c
+[2021asp32@fedora 2025_OS]$ gcc ex6.c -o f6exe
+ex6.c: In function ‘main’:
+ex6.c:10:24: error: ‘i’ undeclared (first use in this function)
+   10 |                 while (i!=0)
+      |                        ^
+ex6.c:10:24: note: each undeclared identifier is reported only once for each function it appears in
+ex6.c:10:29: error: expected ‘;’ before ‘{’ token
+   10 |                 while (i!=0)
+      |                             ^
+      |                             ;
+   11 |                 {
+      |                 ~
+[2021asp32@fedora 2025_OS]$ vi ex6.c
+[2021asp32@fedora 2025_OS]$ vi ex6.c
+[2021asp32@fedora 2025_OS]$ gcc ex6.c -o f6exe
+ex6.c: In function ‘main’:
+ex6.c:10:34: error: expected ‘;’ before ‘{’ token
+   10 |                 while (number!=0)
+      |                                  ^
+      |                                  ;
+   11 |                 {
+      |                 ~
+[2021asp32@fedora 2025_OS]$

@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<unistd.h>
+int main(){
+	int p[2],rv;
+	rv=pipe(p);
+	
+	if(rv<0){
+		printf("creating pipe is failed\n");
+	return -1;
+	}
+	
+	char sendmsg[25]="Hello! Good Morning";
+	write(p[1],sendmsg,25);
+	
+	char readmsg[25];
+	read(p[0],readmsg,10);
+	
+	printf("Message read is %s\n");
+	read(p[0],readmsg,10);
+	printf("Message read is %s\n");
+	
+	return 0;
+}

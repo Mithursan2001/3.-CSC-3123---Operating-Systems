@@ -1,0 +1,9 @@
+a=10
+b=5
+subtraction=$(($a-$b))
+multiplication=$(($a*$b))
+division=$(($a/$b))
+
+echo "multiplication of $a and $b is $multiplication"
+echo "subtraction of $a and $b is $subtraction"
+echo "division of $a and $b is $division"

@@ -1,0 +1,87 @@
+/* factorial() {
+    n=$1
+    fact=1
+    for (( i=1; i<=n; i++ ))
+    do
+        fact=$((fact * i))
+    done
+    echo $fact
+}
+
+read -p "Enter n: " n
+read -p "Enter r: " r
+
+fn=$(factorial $n)
+fr=$(factorial $r)
+fnr=$(factorial $((n-r)))
+
+ncr=$(( fn / (fr * fnr) ))
+
+echo "nCr = $ncr" */
+
+/* parent get the number from the user and send that numbet to child, child wants to 
+find the factorial and then resend the factorial value to parent to print. */
+
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+// Function to compute factorial
+int factorial(int n) {
+    int fact = 1;
+    for(int i = 1; i <= n; i++)
+        fact *= i;
+    return fact;
+}
+
+int main() {
+    int n, r;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+    printf("Enter r: ");
+    scanf("%d", &r);
+
+    if (r < 0 || n < 0 || r > n) {
+        printf("Invalid input! n >= r >= 0\n");
+        return 1;
+    }
+
+    int p1[2], p2[2]; // pipes: parent->child, child->parent
+    pipe(p1);
+    pipe(p2);
+
+    pid_t pid = fork();
+
+    if (pid == 0) {
+        // Child process
+        close(p1[1]); // close write end of parent->child pipe
+        close(p2[0]); // close read end of child->parent pipe
+
+        int nums[2];
+        read(p1[0], nums, sizeof(nums)); // read n and r from parent
+        int n_val = nums[0];
+        int r_val = nums[1];
+
+        int nCr = factorial(n_val) / (factorial(r_val) * factorial(n_val - r_val));
+
+        write(p2[1], &nCr, sizeof(nCr)); // send result back to parent
+        return 0;
+    } else {
+        // Parent process
+        close(p1[0]); // close read end
+        close(p2[1]); // close write end
+
+        int nums[2] = {n, r};
+        write(p1[1], nums, sizeof(nums)); // send n and r to child
+
+        int result;
+        read(p2[0], &result, sizeof(result)); // read nCr from child
+
+        printf("nCr = %d\n", result);
+
+        wait(NULL); // wait for child
+    }
+
+    return 0;
+}

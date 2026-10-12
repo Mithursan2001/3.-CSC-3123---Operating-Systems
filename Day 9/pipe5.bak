@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<string.h>
+int main(){
+	int p[2],rv,childid;
+	rv=pipe(p);
+	
+	if(rv==-1){
+		printf("creating pipe is failed\n");
+		return -1;
+	}
+	
+	childid=fork();
+	
+	if(childid<0){
+		printf("creating the child is failed\n");
+		return -1;
+	}
+	
+	if(childid==0){
+	printf("I am child process. I send message to my parent\n");	
+	char sendmsg[40]="Hai!, dad how are you?";
+	close(p[0]);
+	write(p[1],sendmsg,strlen(sendmsg)+1);
+	} 
+
+	else{
+	printf("I am parent process. My son send message for me the message is :\n");
+	char readmsg[40];
+	close(p[1]);
+	read(p[0],readmsg,40);
+	printf("%s\n",readmsg);
+	}
+	
+	return 0;
+}

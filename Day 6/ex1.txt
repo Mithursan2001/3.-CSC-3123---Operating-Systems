@@ -1,0 +1,8 @@
+echo "Enter 1st number : "
+read m
+
+echo "Enter 2nd number : "
+read n
+
+sum1=$(($m+$n))
+echo "sum=$sum1"

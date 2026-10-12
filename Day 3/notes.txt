@@ -1,0 +1,47 @@
+login as: 2021asp32
+2021asp32@172.16.150.200's password:
+Last login: Mon Sep  1 10:26:27 2025 from 172.16.150.23
+[2021asp32@fedora ~]$ mkdir mithu
+[2021asp32@fedora ~]$ cd mithu
+[2021asp32@fedora mithu]$ touch child1.c
+[2021asp32@fedora mithu]$ vi child1.c
+[2021asp32@fedora mithu]$ gcc child1.c -o f1exe
+child1.c: In function ‘main’:
+child1.c:3:9: warning: implicit declaration of function ‘fork’ [-Wimplicit-function-declaration]
+    3 |         fork();
+      |         ^~~~
+[2021asp32@fedora mithu]$ ./f1exe
+Hello!
+Hello!
+[2021asp32@fedora mithu]$ vi child1.c
+[2021asp32@fedora mithu]$ gcc child1.c -o f1exe
+[2021asp32@fedora mithu]$ ./f1exe
+Hello!
+Hello!
+[2021asp32@fedora mithu]$ vi child1.c
+[2021asp32@fedora mithu]$ gcc child1.c -o f1exe
+[2021asp32@fedora mithu]$ ./f1exe
+Hello!
+Hello!
+Hello!
+Hello!
+[2021asp32@fedora mithu]$ touch processid.c
+[2021asp32@fedora mithu]$ vi processid.c
+[2021asp32@fedora mithu]$ gcc processid.c -o f2exe
+[2021asp32@fedora mithu]$ ./f2exe
+Hello!
+My process is is 8332
+My process is is 8333
+[2021asp32@fedora mithu]$ touch ex1.c
+[2021asp32@fedora mithu]$ vi ex1.c
+[2021asp32@fedora mithu]$ gcc ex1.c -o f3exe
+[2021asp32@fedora mithu]$ ./f3exe
+My process is 9982
+My process is 9986
+My process is 9983
+My process is 9987
+My process is 9984
+My process is 9988
+My process is 9985
+My process is 9989
+[2021asp32@fedora mithu]$

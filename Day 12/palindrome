@@ -1,0 +1,21 @@
+echo -n "Enter an integer: "
+read n
+
+m=$n
+reverse=0
+
+while [ $n -gt 0 ]
+do
+    r=$(($n % 10))
+    n=$(($n / 10))
+    reverse=$(($reverse * 10 + $r))
+done
+
+echo "Reverse is: $reverse"
+
+if [ $reverse -eq $m ]
+then
+    echo "Palindrome"
+else
+    echo "Not Palindrome"
+fi
